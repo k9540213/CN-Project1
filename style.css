@@ -1,0 +1,210 @@
+:root {
+    --primary: #2563eb;       /* Modern Tech Blue */
+    --secondary: #1e293b;     /* Dark Slate */
+    --accent: #3b82f6;        /* Lighter Blue */
+    --bg-light: #f8fafc;      /* Very light grey background */
+    --text-dark: #1e293b;
+    --text-light: #64748b;
+    --white: #ffffff;
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+/* --- Navigation --- */
+.navbar {
+    background: var(--white);
+    border-bottom: 1px solid #e2e8f0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: var(--secondary);
+}
+.highlight { color: var(--primary); }
+
+.nav-links { list-style: none; display: flex; gap: 2rem; }
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 500;
+    transition: color 0.3s;
+}
+.nav-links a:hover, .nav-links a.active { color: var(--primary); }
+
+/* --- Hero Section --- */
+.hero {
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    color: var(--white);
+    padding: 5rem 0;
+    text-align: center;
+}
+.hero.small-hero { padding: 3rem 0; }
+
+.badge {
+    background: rgba(37, 99, 235, 0.2);
+    color: #60a5fa;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    display: inline-block;
+}
+
+.hero h1 { font-size: 3rem; margin-bottom: 1rem; font-weight: 800; letter-spacing: -0.025em; }
+.hero .subtitle { font-size: 1.25rem; color: #94a3b8; max-width: 600px; margin: 0 auto 2rem; }
+
+.hero-buttons { display: flex; justify-content: center; gap: 1rem; }
+.btn {
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+.btn-primary { background: var(--primary); color: white; }
+.btn-primary:hover { background: #1d4ed8; transform: translateY(-2px); }
+.btn-secondary { background: rgba(255,255,255,0.1); color: white; }
+.btn-secondary:hover { background: rgba(255,255,255,0.2); }
+
+/* --- Layout Utility --- */
+.container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
+.section-content { margin: 4rem 0; }
+.section-header { margin-bottom: 2rem; }
+.section-header h2 { font-size: 1.75rem; color: var(--secondary); margin-bottom: 0.5rem; }
+.line { width: 60px; height: 4px; background: var(--primary); border-radius: 2px; }
+.lead-text { font-size: 1.15rem; color: var(--text-light); max-width: 800px; }
+
+/* --- Team Card (Single Member Focus) --- */
+.team-single-wrapper {
+    display: flex;
+    justify-content: center; /* Center the single card */
+}
+
+.card.single-member {
+    max-width: 500px; /* Prevent it from getting too wide */
+    width: 100%;
+}
+
+.card {
+    background: var(--white);
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    border: 1px solid #f1f5f9;
+    transition: transform 0.3s ease;
+    text-align: center;
+}
+.card:hover { transform: translateY(-5px); }
+.card-icon { font-size: 2.5rem; color: var(--primary); margin-bottom: 1rem; }
+.card h3 { margin-bottom: 1rem; color: var(--secondary); font-size: 1.5rem; }
+
+/* Role Tags Styling */
+.roles-tags { display: flex; justify-content: center; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
+.role-tag {
+    background: #e0e7ff;
+    color: #4338ca;
+    padding: 0.25rem 0.75rem;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.card .desc { color: var(--text-light); font-size: 1rem; line-height: 1.6; }
+
+/* --- Tech Evidence Sections (Networking Page) --- */
+.tech-section {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    margin: 4rem 0;
+}
+.tech-section.reverse { flex-direction: row-reverse; }
+.text-content { flex: 1; }
+.text-content h2 { color: var(--secondary); margin-bottom: 1rem; }
+.text-content p { color: var(--text-light); margin-bottom: 1rem; }
+
+/* The Terminal Look */
+.terminal-window, .browser-window {
+    flex: 1.2;
+    background: #1e293b;
+    border-radius: 8px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    min-height: 250px;
+}
+.terminal-header, .browser-header {
+    background: #0f172a;
+    padding: 0.75rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.dot { width: 12px; height: 12px; border-radius: 50%; }
+.red { background: #ef4444; } .yellow { background: #f59e0b; } .green { background: #10b981; }
+.title { color: #94a3b8; font-size: 0.8rem; margin-left: auto; font-family: monospace; }
+
+.terminal-body { padding: 1rem; font-family: 'Fira Code', monospace; color: #10b981; font-size: 0.9rem; }
+.browser-body { padding: 0; background: #fff; height: 200px; display: flex; align-items: center; justify-content: center; }
+
+/* Browser specifics */
+.search-bar {
+    background: #1e293b; 
+    color: #94a3b8; 
+    padding: 0.25rem 1rem; 
+    border-radius: 4px; 
+    font-size: 0.8rem; 
+    width: 100%;
+    text-align: center;
+}
+
+/* Placeholder for images */
+.placeholder-text {
+    opacity: 0.5;
+    text-align: center;
+    margin-top: 2rem;
+    color: #fff;
+    border: 2px dashed #475569;
+    padding: 2rem;
+}
+.browser-body .placeholder-text { color: #ccc; border-color: #ddd; }
+
+img { max-width: 100%; height: auto; display: block; }
+
+.divider { border: 0; height: 1px; background: #e2e8f0; margin: 2rem 0; }
+
+footer {
+    text-align: center;
+    padding: 3rem 0;
+    border-top: 1px solid #e2e8f0;
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .hero h1 { font-size: 2rem; }
+    .tech-section, .tech-section.reverse { flex-direction: column; }
+    .nav-links { display: none; }
+    .card.single-member { padding: 1.5rem; }
+}
